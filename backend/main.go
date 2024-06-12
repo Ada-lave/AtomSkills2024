@@ -13,7 +13,7 @@ import (
 
 const (
 	dbUser = "mongo_db_admin"
-	dbPass = "EXAMPLE_PASSWORD"
+	dbPass = "atompass"
 	dbName = "study"
 )
 
@@ -43,7 +43,7 @@ func requestHandler(w http.ResponseWriter, req *http.Request) {
 
 	ctx := context.Background()
 
-	client, err := mongo.Connect(ctx, options.Client().ApplyURI("mongodb://localhost:27017"))
+	client, err := mongo.Connect(ctx, options.Client().ApplyURI("mongodb://mongo:27017"))
 
 	if err != nil {
 		fmt.Println(err.Error())
